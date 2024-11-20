@@ -20,7 +20,7 @@ pip install flask google-api-python-client google-auth-httplib2 google-auth-oaut
 pytesseract.tesseract_cmd = r'D:\blackboard\AI_online\cloudilic\tesseract.exe'
 ```
 * ara_num_lolo.traindata
-custom OCR model ara_num_lolo is still being fine-tuned, and I will release it soon for public use.
+  * custom OCR model ara_num_lolo is still being fine-tuned, and I will release it soon for public use.
 ## Setup and Usage
 1. Clone this repository:
 ```bash
