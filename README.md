@@ -45,9 +45,7 @@ python app.py
 
 ## Google Drive API Setup
 1. Google Drive API Credentials:
-
 Enable the Google Drive API in your Google Cloud project.
 Download the client_secret.json file and place it in the project directory.
 2. Token File:
-
 The script generates a token.json file during authentication. Keep this file secure.
