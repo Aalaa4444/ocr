@@ -29,17 +29,14 @@ git clone https://github.com/Aalaa4444/ocr.git
 cd ocr
 ```
 2. Configure Google Drive API:
-
 Set up Google Drive API credentials.
 Save the client_secret.json file in the ocr sub-directory.
 3. Run the Flask app:
-
 ```bash
 python app.py
 ```
 python app.py
 4. Access the endpoints:
-
 * Upload Invoice: Use a tool like Postman to send a POST request to /upload.
 * Monitor Folder: Send a GET request to /monitor-folder.
 
