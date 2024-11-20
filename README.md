@@ -11,4 +11,27 @@ Ensure the following dependencies are installed before running the application:
 * Flask
 * Google API Client (google-api-python-client)
 * Pillow (PIL)
+```bash
 pip install flask google-api-python-client pillow
+```
+## Setup and Usage
+1. Clone this repository:
+```bash
+git clone https://github.com/Aalaa4444/ocr.git
+
+cd ocr
+```
+2. Configure Google Drive API:
+
+Set up Google Drive API credentials.
+Save the client_secret.json file in the ocr sub-directory.
+3. Run the Flask app:
+
+```bash
+python app.py
+```
+python app.py
+4. Access the endpoints:
+
+* Upload Invoice: Use a tool like Postman to send a POST request to /upload.
+* Monitor Folder: Send a GET request to /monitor-folder.
