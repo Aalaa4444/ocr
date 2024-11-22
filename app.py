@@ -3,6 +3,7 @@ from ocr.ocr_model import *
 from ocr.google_drive import *
 from PIL import Image
 from ocr.prerocess import *
+from ocr.agent import *
 app = Flask(__name__)
 
 @app.route('/upload', methods=['POST'])
@@ -26,13 +27,15 @@ def upload_invoice():
         print("Image opened successfully") 
         j=extract_invoice_details(img)
         jsonify({"message": "File uploaded successfully"})
+        agent = InvoiceAgent()
+        validated_details = agent.validate_invoice_details(j)
         
         
     except Exception as e:
         print(f"Error opening image: {e}")
         return jsonify({"error": "Failed to process image"}), 500
 
-    return jsonify(j), 200
+    return jsonify(j,"validated_details",validated_details), 200
 
 @app.route('/monitor-folder', methods=['GET'])
 def monitor_folder():
@@ -49,12 +52,14 @@ def monitor_folder():
             save_downloaded_files(downloaded_files)
             time.sleep(60)  # Poll every minute
             jj= monitor(service, folder_id, downloaded_files)
+            agent = InvoiceAgent()
+            validated_details = agent.validate_invoice_details(jj)
             save_downloaded_files(downloaded_files)
-            return jsonify(jj),200
+            return jsonify(jj,"validated_details",validated_details),200
     except KeyboardInterrupt:
         print("Stopping monitoring.")
         save_downloaded_files(downloaded_files)
-        return jsonify(jj),200
+        return jsonify(jj,"validated_details",validated_details),200
 
 if __name__ == "__main__":
     app.run(debug=True)
