@@ -8,6 +8,11 @@ You can install the required dependencies using pip:
 ```bash
 pip install torch torchvision numpy matplotlib opencv-python scikit-learn seaborn
 ```
+## Results
+The model achieves the following performance on the test set:
+
+* Test Accuracy: 99.70%
+  * with only 10 epochs
 
 ## Code Overview
 1. Dataset Preprocessing:
@@ -21,10 +26,7 @@ The model is trained using the Adam optimizer and cross-entropy loss. The traini
 
 4. Evaluation:
 After training, the model is tested on a separate test set to evaluate its accuracy. The classification report and confusion matrix are generated using sklearn.metrics to provide insights into the model's performance.
-## Results
-The model achieves the following performance on the test set:
 
-* Test Accuracy: 99.70%
 ## Dataset
 
 The dataset used in this project consists of images of Arabic letters and numbers. The dataset is organized in directories named after each character, where each image corresponds to a single Arabic character or number.     
